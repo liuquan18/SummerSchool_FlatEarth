@@ -7,7 +7,7 @@ omit_last_file = True
 
 # --- do ocean and/or atmosphere plots
 do_atmosphere_plots = True
-do_ocean_plots      = True
+do_ocean_plots      = False
 do_hamocc_plots     = True
 
 # --- grid information

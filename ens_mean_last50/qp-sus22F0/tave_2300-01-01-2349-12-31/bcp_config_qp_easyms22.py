@@ -7,7 +7,7 @@ omit_last_file = True
 
 # --- do ocean and/or atmosphere plots
 do_atmosphere_plots = True
-do_ocean_plots      = False
+do_ocean_plots      = True
 do_hamocc_plots     = True
 
 # --- grid information
@@ -73,5 +73,6 @@ red_list += ['ts_pme_gmean']
 # uncomment this to omit plots which require loading 3D u, v
 #red_list += ['arctic_budgets']
 # uncomment this to omit plots which require loading 3D density
-red_list += ['dens30w','mlotst_mar', 'mlotst_sep']
+red_list += ['dens30w','mlotst_mar', 'mlotst_sep','ice_concentration_nh','sec:Ice',
+'ice_thickness_nh', 'snow_thickness_nh','ice_concentration_sh', 'ice_thickness_sh', 'snow_thickness_sh',] 
 

@@ -1,29 +1,3 @@
-#!/bin/bash
-#SBATCH --job-name=pyicon_qp
-#SBATCH --time=08:00:00
-#SBATCH --output=log.o-%j.out
-#SBATCH --error=log.o-%j.out
-#SBATCH --nodes=1
-#SBATCH --exclusive
-#SBATCH --partition=compute
-#SBATCH --account=mh1049
-
-module list
-#source ./conda_act_mistral_pyicon_env.sh
-#source /home/m/m300602/pyicon/tools/act_pyicon_py39.sh 
-module load python
-which python
-
-rand="easyms22"
-
-PYICON_PATH="$( cd "$(pwd)/.." >/dev/null 2>&1 && pwd )"  # problem: takes directory as base from where this script is called
-export PYTHONPATH="${PYICON_PATH}"
-
-path_pyicon=`(cd .. && pwd)`"/"
-config_file="./config_qp_${rand}.py"
-qp_driver="${path_pyicon}pyicon/quickplots/qp_driver.py"
-
-cat > ${config_file} << %eof%
 
 # --- path to quickplots
 path_quickplots = '../all_qps/easyms22/'
@@ -100,33 +74,4 @@ red_list += ['ts_pme_gmean']
 #red_list += ['arctic_budgets']
 # uncomment this to omit plots which require loading 3D density
 #red_list += ['dens30w']
-
-%eof%
-
-# --- start qp_driver
-startdate=`date +%Y-%m-%d\ %H:%M:%S`
-
-# easyms2020 control experiment
-
-path_data="/work/mh1049/k206174/icon-easyms/ensemble_mean/"
-# python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='1850-01-01,1899-12-31'
-#python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='1900-01-01,1949-12-31'
-#python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='1950-01-01,1999-12-31'
-#python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='2000-01-01,2049-12-31'
-#python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='2050-01-01,2099-12-31'
-#python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='2100-01-01,2149-12-31'
-#python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='2150-01-01,2199-12-31'
-#python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='2200-01-01,2249-12-31'
-#python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='2250-01-01,2299-12-31'
-python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='2300-01-01,2349-12-31'
-
-
-enddate=`date +%Y-%m-%d\ %H:%M:%S`
-
-#rm ${config_file}
-
-echo "--------------------------------------------------------------------------------"
-echo "Started at ${startdate}"
-echo "Ended at   ${enddate}"
-
 

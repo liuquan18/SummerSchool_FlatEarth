@@ -108,8 +108,8 @@ startdate=`date +%Y-%m-%d\ %H:%M:%S`
 
 # easyms2020 control experiment
 
-path_data="/work/mh1049/k206160/icon-easyms/experiments/$run/outdata/"
-python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='1850-01-01,1899-12-31'
+path_data="/work/mh1049/k206174/icon-easyms/ensemble_mean/"
+# python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='1850-01-01,1899-12-31'
 #python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='1900-01-01,1949-12-31'
 #python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='1950-01-01,1999-12-31'
 #python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='2000-01-01,2049-12-31'
@@ -118,7 +118,7 @@ python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=
 #python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='2150-01-01,2199-12-31'
 #python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='2200-01-01,2249-12-31'
 #python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='2250-01-01,2299-12-31'
-#python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='2300-01-01,2349-12-31'
+python -u ${qp_driver} --batch=True ${config_file} --path_data=$path_data --run=$run --tave_int='2300-01-01,2349-12-31'
 
 
 enddate=`date +%Y-%m-%d\ %H:%M:%S`

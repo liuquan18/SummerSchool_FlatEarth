@@ -73,5 +73,5 @@ red_list += ['ts_pme_gmean']
 # uncomment this to omit plots which require loading 3D u, v
 #red_list += ['arctic_budgets']
 # uncomment this to omit plots which require loading 3D density
-#red_list += ['dens30w']
+red_list += ['dens30w','mlotst_mar', 'mlotst_sep']
 

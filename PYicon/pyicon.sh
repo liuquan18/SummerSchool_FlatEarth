@@ -26,7 +26,7 @@ qp_driver="${path_pyicon}pyicon/quickplots/qp_driver.py"
 cat > ${config_file} << %eof%
 
 # --- path to quickplots
-path_quickplots = '../all_qps/easyms22/'
+path_quickplots = '/work/mh0033/m300883/summerschool/SummerSchool_FlatEarth/ens_last50_quick_plots'
 
 # --- set this to True if the simulation is still running
 omit_last_file = True
